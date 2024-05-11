@@ -1,0 +1,45 @@
+.nav{
+    padding: 0 5rem;
+    background-color: var(--blue-2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    width: 7rem;
+}
+
+.navlinks{
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.link{
+    color: var(--blue-3);
+    font-family: var(--titan-one);
+}
+
+.btnMenu{
+    color: var(--blue-3);
+    display: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .btnMenu{
+        display: block;
+    }
+    .navlinks{
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        top: 6rem;
+        background-color: var(--blue-2);
+        right: 0;
+        padding: 4rem;
+        width: 50vw;
+        height: 100vh;
+    }
+}
