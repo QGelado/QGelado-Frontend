@@ -118,3 +118,35 @@
     margin-right: 15px;
 }
 
+@media screen and (max-width:1150px) {
+    .conta__infomacoes{
+        margin-left: 10px;
+    }
+  .informacoes__container__inputs{
+      gap: 25px;
+    }
+    
+    .botoes__botaoDeletar, .botoes__botaoSalvar{
+        margin-left: 28px;
+    }
+}
+@media screen and (max-width:1050px) {
+    .container__conta{
+        height: calc(100% - 40px);
+        margin: 20px;   
+    }
+    .informacoes__container__inputs{
+        width: 100%;
+        flex-direction: column;
+    }
+    .informacoes__container__botoes {
+        width: 100%;
+        justify-content: center;
+    }
+}
+@media screen and (max-width:690px) {
+    .conta__nomeAdmin{
+        flex-direction: column;
+        margin-left: 0px;
+    }
+}

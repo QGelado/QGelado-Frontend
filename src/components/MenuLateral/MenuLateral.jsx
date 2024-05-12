@@ -15,7 +15,7 @@ const MenuLateral = ({ selecao, adminName }) => {
 
         <section className='adminName__container'>
           <img src="../../public/imgs/MenuLateral/admin_photo.svg" alt="Foto perfil admin" className='photo_perfil imagens-centralizadas' />
-          <p style={{fontSize: 20, fontWeight: "bold", textAlign: "center"}}>{adminName}</p>
+          <p style={{ fontSize: 20, fontWeight: "bold", textAlign: "center" }}>{adminName}</p>
         </section>
 
         <Menu
