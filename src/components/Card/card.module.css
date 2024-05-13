@@ -1,7 +1,7 @@
 .box_card_sorvete{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: stretch;
     border-radius: 30px;
     background-color: #fff;
