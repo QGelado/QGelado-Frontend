@@ -3,12 +3,12 @@
 }
 
 .logo__menulateral {
-  width: 140px;
+  width: 100%;
   height: 140px;
 }
 
 .photo_perfil{
-  width: 90px;
+  width: 80%;
   height: 90px;
 }
 
@@ -26,4 +26,19 @@
 .adminName__container {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.collapse__container{
+  width: 20px;
+  height: 20px;
+  background-color: #197CFF;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  z-index: 1000;
 }
