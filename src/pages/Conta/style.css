@@ -5,18 +5,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 100vh;
+    height: 100%;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 14px;
     background-color: #FDFDFD;
     display: flex;
+    position: relative;
 }
 
 .container__conta{
     width: calc(100% - 250px);
-    height: calc(100% - 80px);
+    height: calc(100vh - 80px);
+    padding: 20px;
     background-color: #E5F8FF;
     margin: 40px;
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
@@ -139,7 +141,8 @@
 
 .popup__window{
     width: 40%;
-    height: 50%;
+    height: max-content;
+    padding: 20px;
     background-color: #FFC2E1;
     border-radius: 20px;
     border: 3px solid #FF90C8;
@@ -199,7 +202,7 @@
 }
 @media screen and (max-width:1050px) {
     .container__conta{
-        height: calc(100% - 40px);
+        height: max-content;
         margin: 20px;   
     }
     .informacoes__container__inputs{
@@ -212,9 +215,37 @@
     }
 }
 @media screen and (max-width:690px) {
+    .container__conta{
+        width: 100%;
+    }
     .conta__nomeAdmin{
         flex-direction: column;
         margin-left: 0px;
+    }
+    .inputs__header input {
+        width: 215px;
+        height: 25px;
+    }
+    .informacoes__container__botoes{
+        margin-top: 20px;
+    }    
+    .inputs__header{
+        align-items: center;
+    }
+    .botoes__botaoDeletar{
+        margin-left: 0px;
+    }
+    .botoes__botaoSalvar{
+        margin-right: 0px;
+    }
+    .popup__window{
+        width: 60%;
+    }
+    .title__text{
+        margin: 0px;
+    }
+    .window__container__textContent > p{
+        font-size: 14px;
     }
 }
 

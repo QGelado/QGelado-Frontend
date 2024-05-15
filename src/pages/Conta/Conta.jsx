@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import MenuLateral from '../../components/MenuLateral/MenuLateral';
 import './style.css';
+import PropTypes from 'prop-types';
 
 function PopupActions({title, textContent, redButtonText, greenButtonText, visibility, state}) {
     return (
@@ -86,5 +87,14 @@ const Conta = () => {
         </main>
     )
 }
+
+PopupActions.propTypes = {
+    title: PropTypes.string,
+    textContent: PropTypes.string,
+    redButtonText: PropTypes.string,
+    greenButtonText: PropTypes.string,
+    visibility: PropTypes.bool,
+    state: PropTypes.func,
+};
 
 export default Conta
