@@ -1,16 +1,18 @@
-import React from 'react'
-import styles from './cadastroprodutos.module.css'
+import React, { useEffect } from 'react'
+import styles from './editarprodutos.module.css'
 import { useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import { FaImage } from "react-icons/fa6";
+import { RiImageEditFill } from "react-icons/ri";
 
-const CadastroProdutos = () => {
+const EditarProdutos = () => {
     const searchParams = new URLSearchParams(useLocation().search)
     const type = searchParams.get('type')
+    const id = searchParams.get('id')
     const [fields] = useState(
-        type === 'sabor-sorvete' ? ['nome', 'sabor', 'quantidade', 'preco', 'imagem']
-        : type === 'recipiente' || type === 'acompanhamento' ? ['nome', 'tipo', 'quantidade', 'preco', 'imagem']
-        : type === 'sorvete-padrao' ? ['nome',  'marca', 'preco', 'sabor', 'quantidade', 'descricao', 'imagem'] 
+        type === 'sabor-sorvete' ? ['imagem', 'nome', 'sabor', 'quantidade', 'preco']
+        : type === 'recipiente' || type === 'acompanhamento' ? ['imagem', 'nome', 'tipo', 'quantidade', 'preco']
+        : type === 'sorvete-padrao' ? ['imagem', 'nome',  'marca', 'preco', 'sabor', 'quantidade', 'descricao'] 
         : []
     )
     const [produto, setProduto] = useState(Object.fromEntries(Object.entries(Object.assign({}, fields)).map(item => {return [item[1], '']})))
@@ -19,6 +21,10 @@ const CadastroProdutos = () => {
     : type === 'acompanhamento' ? 'Acompanhamento'
     : type === 'sorvete-padrao' ? 'Sorvete padrão' 
     : []
+
+    useEffect(() =>{
+
+    }, [])
     
     const changeProduct = (value, prop) =>{
         setProduto({...produto, [prop]: value})
@@ -26,7 +32,7 @@ const CadastroProdutos = () => {
     }
   return (
     <div className={styles.container}>
-        <h1 className={styles.title}>Cadastrar {name}</h1>
+        <h1 className={styles.title}>Editar {name}{id}</h1>
         <form className={styles.form}>
             {
                 fields.map((field) => {
@@ -60,7 +66,10 @@ const CadastroProdutos = () => {
                                 <input type="file" id={field} onChange={(e) => changeProduct(e.target.files[0], field)} style={{display:'none'}}/>
                                 <label htmlFor={field} style={{overflowY:'auto'}}>
                                     {produto.imagem  ? 
+                                    <div style={{display: 'flex', flexDirection: 'column'}}>
                                         <img src={URL.createObjectURL(produto.imagem)} className={styles.imgProduct}/>
+                                        <RiImageEditFill color='#FF40A0' size={30} className={styles.imgIconProduct}/>
+                                    </div>
                                     :
                                         <div className={styles.imgInputProduct}>
                                             <FaImage color='#30c8ff' size={50}/>
@@ -84,4 +93,4 @@ const CadastroProdutos = () => {
   )
 }
 
-export default CadastroProdutos
+export default EditarProdutos

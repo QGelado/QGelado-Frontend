@@ -84,3 +84,8 @@
     overflow-y: auto;
     cursor: pointer;
 }
+.imgIconProduct{
+    margin-top: -1rem;
+    align-self: flex-end;
+    cursor: pointer;
+}
