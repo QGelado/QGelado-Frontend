@@ -8,6 +8,7 @@ import { MdOutlineStickyNote2, MdOutlineAccountBox, MdLogout,  } from "react-ico
 import { TbCone2 } from "react-icons/tb";
 import { GiChocolateBar, GiStrawberry  } from "react-icons/gi";
 import { IoIosArrowForward } from "react-icons/io";
+import { GoArchive } from "react-icons/go";
 
 const MenuLateral = ({ selecao, adminName }) => {
   const [collapsed, setCollapsed] = useState(false);
@@ -48,6 +49,7 @@ const MenuLateral = ({ selecao, adminName }) => {
             <MenuItem component={<Link to="/" />} active={selecao == "saborSorvete" ? true : false}  icon={<GiStrawberry />}>Sabor sorvete</MenuItem>
           </SubMenu>
           <MenuItem component={<Link to="/" />} active={selecao == "pedidos" ? true : false}  icon={<MdOutlineStickyNote2 />}>Pedidos</MenuItem>
+          <MenuItem component={<Link to="/" />} active={selecao == "estoque" ? true : false}  icon={<GoArchive  />}>Estoque</MenuItem>
           <MenuItem component={<Link to="/" />} active={selecao == "conta" ? true : false} icon={<MdOutlineAccountBox />}>Conta</MenuItem>
           <MenuItem component={<Link to="/" />} active={selecao == "sair" ? true : false} icon={<MdLogout />}>Sair</MenuItem>
         </Menu>
