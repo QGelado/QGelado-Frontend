@@ -1,27 +1,37 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './cadastroprodutos.module.css'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { FaImage } from "react-icons/fa6";
 import axios from 'axios';
 import { api } from '../../utils/api';
+import MenuLateral from '../../components/MenuLateral/MenuLateral';
 
 const CadastroProdutos = () => {
     const searchParams = new URLSearchParams(useLocation().search)
     const type = searchParams.get('type')
     const token = window.localStorage.getItem('token')
-    const [fields] = useState(
-        type === 'sabor-sorvete' ? ['nome', 'sabor', 'quantidade', 'preco', 'file']
-        : type === 'recipiente' || type === 'acompanhamento' ? ['nome', 'tipo', 'quantidade', 'preco', 'file']
-        : type === 'sorvete-padrao' ? ['nome',  'marca', 'preco', 'sabor', 'quantidade', 'descricao', 'file'] 
-        : []
-    )
-    const [produto, setProduto] = useState(Object.fromEntries(Object.entries(Object.assign({}, fields)).map(item => {return [item[1], '']})))
+    const objFields = {
+        'sabor-sorvete':['nome', 'sabor', 'quantidade', 'preco', 'file'],
+        'recipiente': ['nome', 'tipo', 'quantidade', 'preco', 'file'],
+        'acompanhamento': ['nome', 'tipo', 'quantidade', 'preco', 'file'],
+        'sorvete-padrao': ['nome',  'marca', 'preco', 'sabor', 'quantidade', 'descricao', 'file']
+    }
+    const [fields, setFields] = useState(objFields[type])
+    const initProduct = Object.fromEntries(Object.entries(Object.assign({}, fields)).map(item => {return [item[1], '']}))
+    const [produto, setProduto] = useState(initProduct)
     const name = type === 'sabor-sorvete' ? 'Sabor de sorvete'
     : type === 'recipiente' ? 'Recipiente' 
     : type === 'acompanhamento' ? 'Acompanhamento'
     : type === 'sorvete-padrao' ? 'Sorvete padrão' 
-    : []
+    : ''
+
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        setFields(objFields[type])
+        setProduto(initProduct)
+    }, [searchParams.get('type')])
     
     const changeProduct = (value, prop) =>{
         setProduto({...produto, [prop]: value})
@@ -42,6 +52,9 @@ const CadastroProdutos = () => {
             })
             .then((response) => {
                 console.log(response.data);
+                setTimeout(() =>{
+                    navigate("/estoque")
+                }, 2000)
             })
             .catch((error) =>{
                 console.error(error);
@@ -49,6 +62,8 @@ const CadastroProdutos = () => {
         }
     }
   return (
+  <main className={styles.main}>
+    <MenuLateral selecao={type} adminName="Wilson Vendramel"/>
     <div className={styles.container}>
         <h1 className={styles.title}>Cadastrar {name}</h1>
         <form className={styles.form} onSubmit={createProduct}>
@@ -105,6 +120,7 @@ const CadastroProdutos = () => {
             <button className={styles.btnSalvar} type='submit'>Salvar</button>
         </form>
     </div>
+    </main>
   )
 }
 

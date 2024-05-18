@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import styles from './editarprodutos.module.css'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { FaImage } from "react-icons/fa6";
 import { RiImageEditFill } from "react-icons/ri";
 import { api } from '../../utils/api';
 import { getImage } from '../../utils/getImage';
+import MenuLateral from '../../components/MenuLateral/MenuLateral';
 
 const EditarProdutos = () => {
     const searchParams = new URLSearchParams(useLocation().search)
@@ -23,7 +24,8 @@ const EditarProdutos = () => {
     : type === 'recipiente' ? 'Recipiente' 
     : type === 'acompanhamento' ? 'Acompanhamento'
     : type === 'sorvete-padrao' ? 'Sorvete padrão' 
-    : []
+    : ''
+    const navigate = useNavigate()
 
     useEffect(() =>{
         api.get(`${type}/${id}`)
@@ -63,6 +65,9 @@ const EditarProdutos = () => {
             })
             .then((response) => {
                 console.log(response.data);
+                setTimeout(() =>{
+                    navigate("/estoque")
+                }, 2000)
             })
             .catch((error) =>{
                 console.error(error);
@@ -70,6 +75,8 @@ const EditarProdutos = () => {
         }
     }
   return (
+    <main className={styles.main}>
+    <MenuLateral selecao={'estoque'} adminName="Wilson Vendramel"/>
     <div className={styles.container}>
         <h1 className={styles.title}>Editar {name}</h1>
         <form className={styles.form} onSubmit={editProduct}>
@@ -129,6 +136,7 @@ const EditarProdutos = () => {
             <button className={styles.btnSalvar} type="submit">Salvar</button>
         </form>
     </div>
+    </main>
   )
 }
 
