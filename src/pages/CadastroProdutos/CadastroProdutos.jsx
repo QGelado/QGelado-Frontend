@@ -6,6 +6,7 @@ import { FaImage } from "react-icons/fa6";
 import axios from 'axios';
 import { api } from '../../utils/api';
 import MenuLateral from '../../components/MenuLateral/MenuLateral';
+import Modal from '../../components/Modal/Modal';
 
 const CadastroProdutos = () => {
     const searchParams = new URLSearchParams(useLocation().search)
@@ -25,7 +26,7 @@ const CadastroProdutos = () => {
     : type === 'acompanhamento' ? 'Acompanhamento'
     : type === 'sorvete-padrao' ? 'Sorvete padrão' 
     : ''
-
+    const [modal, setModal] = useState(null)
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -52,17 +53,24 @@ const CadastroProdutos = () => {
             })
             .then((response) => {
                 console.log(response.data);
+                setModal(<Modal message="Seu produto foi cadastrado com sucesso"/>)
                 setTimeout(() =>{
+                    setModal(null)
                     navigate("/estoque")
                 }, 2000)
             })
             .catch((error) =>{
                 console.error(error);
+                setModal(<Modal message="Seu produto não foi cadastrado"/>)
+                setTimeout(() =>{
+                    setModal(null)
+                }, 2000)
             })
         }
     }
   return (
   <main className={styles.main}>
+    {modal}
     <MenuLateral selecao={type} adminName="Wilson Vendramel"/>
     <div className={styles.container}>
         <h1 className={styles.title}>Cadastrar {name}</h1>
