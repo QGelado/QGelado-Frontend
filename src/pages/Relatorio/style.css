@@ -31,6 +31,7 @@
     color: #197CFF;
 }
 
+
 .relatorio__backgroundData {
     width: 600px;
     border: 1px solid #197CFF;
@@ -41,6 +42,10 @@
     align-items: center;
 }
 
+.relatorio__backgroundData--block {
+ display: block;
+}
+
 .relatorio__backgroundData--big {
     height: 200px;
 }
@@ -49,9 +54,15 @@
     height: 100px;
 }
 
-.relatorio__backgroundData > p {
+.relatorio__backgroundData__text--bold{
     font-family: "Poppins", sans-serif;
     font-size: 20px;
+    font-weight: 800;
+}
+
+.relatorio__backgroundData__text--medium{
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
     font-weight: 800;
 }
 
