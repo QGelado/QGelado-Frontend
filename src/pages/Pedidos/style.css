@@ -1,0 +1,103 @@
+.table__title--relative {
+    position: relative;
+}
+
+.pedido__confirmado__positivo {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #EBF9F1;
+    border: 2px solid #1F9254;
+    border-radius: 15px 0px 0px 15px;
+    color: #1F9254;
+    position: absolute;
+    z-index: 999;
+    top: 10px;
+    right: 0px;
+}
+
+.all__page__container {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #00000041;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+}
+
+.confirma__pedido__container {
+    width: 600px;
+    height: max-content;
+    background-color: #FFC2E1;
+    border-radius: 20px;
+    border: 2px solid #FF90C8;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+}
+
+.title__container {
+    width: 100%;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.title__container>p:first-child {
+    font-size: 20px;
+}
+
+.title__container>p:last-child {
+    font-size: 12px;
+    margin-top: 29px;
+}
+
+.pedidos__list__container__main {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: visible;
+}
+
+.pedidos__list__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.pedidos__list__container:first-child {
+    margin-bottom: 100px;
+}
+
+.pedidos__list__container:last-child {
+    border-top: 1px solid black;
+}
+
+.pedidos__list__column__item {
+    flex-grow: 0.3;
+}
+
+.pedidos__list__column__qtd, .pedidos__list__column__preco {
+    text-align: center;
+}
+
+.pedidos__list__column__title {
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.buttons__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
