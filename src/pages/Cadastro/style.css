@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+
+.cadastro__main {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    background-color: #ff90c8;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cadastroiner__cadastro {
+    width: auto;
+    height: calc(100vh - -61px);
+    border: 2px solid black;
+    padding: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    background-color: #E5F8FF;
+    margin: 40px;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.cadastro__titulo{
+    margin: 5px;
+}
+
+.cadastro__titulo h1{
+    font-family: "Titan One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 26px;
+    color: black;
+    margin-left: -7px;
+}
+
+.cadastro__nomeAdmin{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    margin-left: 50px;
+}
+
+.cadastro__nomeAdmin img{
+    margin: 10px;
+}
+
+.cadastro__nomeAdmin p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cadastro__infomacoes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 0px;
+}
+
+.informacoes__cadastroiner__inputs{
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    flex-direction: column;
+}
+
+.inputs__header{
+    width: 310px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.inputs__header label{
+    font-size: 12px;
+}
+.inputs__header input{
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid black;
+    padding: 2px;
+    font-size: 14px;
+}
+
+.informacoes__cadastroiner__botoes{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px; 
+}
+
+.botoes__botaoDeletar, .botoes__botaoCadastro{
+    padding: 7px;
+    border-radius: 5px;   
+    font-size: 16px;
+    cursor: pointer; 
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    font-family: "Poppins", sans-serif;
+}
+
+.botoes__botaoDeletar{
+    border: 3px solid #A30D11;
+    background-color: #FBE7E8;
+    color: #A30D11;
+    margin-left: 15px;
+}
+
+.botoes__botaoCadastro{
+    border: 3px solid #0D70F2;
+    background-color: #197CFF;
+    color: #ffffff;
+    margin-right: 15px;
+}
+
+.cadastro__cadastroiner__popup--active{
+    display: flex;
+}
+.cadastro__cadastroiner__popup--disable{
+    display: none;
+
+}
+.cadastro__cadastroiner__popup{
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #00000041;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+}
+
+.popup__window{
+    width: 40%;
+    height: max-content;
+    padding: 20px;
+    background-color: #FFC2E1;
+    border-radius: 20px;
+    border: 3px solid #FF90C8;
+}
+
+.window__cadastroiner__title{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.title__text{
+    margin-left: 10px;
+}
+
+.title__icon{
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.window__cadastroiner__textContent{
+    padding: 30px;
+    text-align: center;
+}
+.window__cadastroiner__textContent > p{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 17px;
+}
+
+.window__cadastroiner__buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.window__cadastroiner__buttons > button:first-child{
+    margin-left: 30px;
+}
+.window__cadastroiner__buttons > button:last-child{
+    margin-right: 30px;
+}
+
+@media screen and (max-width:1150px) {
+    .cadastro__infomacoes{
+        margin-left: 10px;
+    }
+  .informacoes__cadastroiner__inputs{
+      gap: 25px;
+    }
+    
+    .botoes__botaoDeletar, .botoes__botaoSalvar{
+        margin-left: 28px;
+    }
+}
+@media screen and (max-width:1050px) {
+    .cadastroiner__cadastro{
+        height: max-content;
+        margin: 20px;   
+    }
+    .informacoes__cadastroiner__inputs{
+        width: 100%;
+        flex-direction: column;
+    }
+    .informacoes__cadastroiner__botoes {
+        width: 100%;
+        justify-content: center;
+    }
+}
+@media screen and (max-width:690px) {
+    .cadastroiner__cadastro{
+        width: 100%;
+    }
+    .cadastro__nomeAdmin{
+        flex-direction: column;
+        margin-left: 0px;
+    }
+    .inputs__header input {
+        width: 215px;
+        height: 25px;
+    }
+    .informacoes__cadastroiner__botoes{
+        margin-top: 20px;
+    }    
+    .inputs__header{
+        align-items: center;
+    }
+    .botoes__botaoDeletar{
+        margin-left: 0px;
+    }
+    .botoes__botaoSalvar{
+        margin-right: 0px;
+    }
+    .popup__window{
+        width: 60%;
+    }
+    .title__text{
+        margin: 0px;
+    }
+    .window__cadastroiner__textContent > p{
+        font-size: 14px;
+    }
+}
+
