@@ -171,7 +171,7 @@ const Pedidos = () => {
 
     return (
         <main className='pedidos__main'>
-            <MenuLateral selecao="estoque" adminName="Wilson Vendramel" />
+            <MenuLateral selecao="pedidos" adminName="Wilson Vendramel" />
             <section className="container__table">
                 <div className='table__title table__title--relative'>
                     <p>Pedidos</p>
