@@ -6,7 +6,7 @@ import React, { PureComponent } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import data from './dataReport';
 
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTY3NTgwOTQsImV4cCI6MTcxNjg0NDQ5NH0.-irUs4WVd_Z8mCkcX-w2m_tG81O1sUV7RinRwy77SRs";
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZWUyNjRiMjc0NjQ2OTdhOTRhODkzNSIsImVtYWlsIjoiZ2loNDUwMEBnbWFpbC5jb20iLCJpYXQiOjE3MTcyNjIyMjQsImV4cCI6MTcxNzM0ODYyNH0.fbo7T1e6E2A3dK-qjqVZ7jFA493b70YsWmEP4eryCwI";
 
 const Relatorio = () => {
     const [qtdUsuarios, setQtdUsuarios] = useState(0);
@@ -49,6 +49,7 @@ const Relatorio = () => {
             }
         })
             .then((response) => {
+                console.log(response.data)
                 setNomeSorvetesMaisVendidos(response.data.filter((e, i) => i <= 3))
             })
             .catch((error) => {
@@ -94,7 +95,8 @@ const Relatorio = () => {
             }
         })
             .then((response) => {
-                setNomesUsuariosVendidos(response.data)
+                const data_filtrada = response.data.filter((e, i) => i < 4)
+                setNomesUsuariosVendidos(data_filtrada)
             })
             .catch((error) => {
                 console.log(error)
