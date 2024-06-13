@@ -15,67 +15,6 @@ import Axios from 'axios';
 
 const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTY2NDg5NDksImV4cCI6MTcxNjczNTM0OX0.zSIgA4WtNDwsk3nhtQjpIseucPoFmeAXTf0K9lTGLRY";
 
-
-
-// const data = [
-//   {
-//     name: {
-//       firstName: 'John',
-//       lastName: 'Doe',
-//     },
-//     address: '261 Erdman Ford',
-//     status: <p style={{ backgroundColor: "#EBF9F1", width: 130, textAlign: "center", padding: 3, borderRadius: 20, color: "#1F9254" }}>Em Estoque</p>,
-//     city: 'East Daphne',
-//     tipo: "Padrão",
-//   },
-//   {
-//     name: {
-//       firstName: 'Jane',
-//       lastName: 'Doe',
-//     },
-//     address: '769 Dominic Grove',
-//     city: 'Columbus',
-//     status: <p style={{ backgroundColor: "#EBF9F1", width: 130, textAlign: "center", padding: 3, borderRadius: 20, color: "#1F9254" }}>Em Estoque</p>,
-//     tipo: "Padrão",
-//   },
-//   {
-//     name: {
-//       firstName: 'Joe',
-//       lastName: 'Doe',
-//     },
-//     address: '566 Brakus Inlet',
-//     city: 'South Linda',
-//     status: <p style={{ backgroundColor: "#EBF9F1", width: 130, textAlign: "center", padding: 3, borderRadius: 20, color: "#1F9254" }}>Em Estoque</p>,
-//     tipo: "Padrão",
-
-//   },
-//   {
-//     name: {
-//       firstName: 'Kevin',
-//       lastName: 'Vandy',
-//     },
-//     address: '722 Emie Stream',
-//     city: 'Lincoln',
-//     status: <p style={{ backgroundColor: "#FBE7E8", width: 130, textAlign: "center", padding: 3, borderRadius: 20, color: "#A30D11" }}>Fora de estoque</p>,
-//     tipo: "Personalizado",
-
-//   },
-//   {
-//     name: {
-//       firstName: 'Joshua',
-//       lastName: 'Rolluffs',
-//     },
-//     address: '32188 Larkin Turnpike',
-//     city: 'Charleston',
-//     status: <p style={{ backgroundColor: "#FBE7E8", width: 130, textAlign: "center", padding: 3, borderRadius: 20, color: "#A30D11" }}>Fora de estoque</p>,
-//     tipo: "Personalizado",
-
-//   },
-// ];
-
-
-
-
 const Estoque = () => {
   const [data, setData] = useState([]);
 
