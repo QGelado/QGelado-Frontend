@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+
+.conta__main {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    background-color: #FDFDFD;
+    display: flex;
+    position: relative;
+}
+
+.container__conta{
+    width: calc(100% - 250px);
+    height: calc(100vh - 80px);
+    padding: 20px;
+    background-color: #E5F8FF;
+    margin: 40px;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.conta__titulo{
+    margin: 5px;
+}
+
+.conta__titulo h1{
+    font-family: "Titan One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 26px;
+    color: #197CFF;
+}
+
+.conta__nomeAdmin{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    margin-left: 50px;
+}
+
+.conta__nomeAdmin img{
+    margin: 10px;
+}
+
+.conta__nomeAdmin p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.conta__infomacoes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 70px;
+}
+
+.informacoes__container__inputs{
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.inputs__header{
+    width: 310px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.inputs__header label{
+    font-size: 12px;
+}
+.inputs__header input{
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid black;
+    padding: 2px;
+    font-size: 14px;
+}
+
+.informacoes__container__botoes{
+    width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.botoes__botaoDeletar, .botoes__botaoSalvar{
+    padding: 7px;
+    border-radius: 5px;   
+    font-size: 16px;
+    cursor: pointer; 
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    font-family: "Poppins", sans-serif;
+}
+
+.botoes__botaoDeletar{
+    border: 3px solid #A30D11;
+    background-color: #FBE7E8;
+    color: #A30D11;
+    margin-left: 15px;
+}
+
+.botoes__botaoSalvar{
+    border: 3px solid #1F9254;
+    background-color: #EBF9F1;
+    color: #1F9254;
+    margin-right: 15px;
+}
+
+.conta__container__popup--active{
+    display: flex;
+}
+.conta__container__popup--disable{
+    display: none;
+
+}
+.conta__container__popup{
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #00000041;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+}
+
+.popup__window{
+    width: 40%;
+    height: max-content;
+    padding: 20px;
+    background-color: #FFC2E1;
+    border-radius: 20px;
+    border: 3px solid #FF90C8;
+}
+
+.window__container__title{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.title__text{
+    margin-left: 10px;
+}
+
+.title__icon{
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.window__container__textContent{
+    padding: 30px;
+    text-align: center;
+}
+.window__container__textContent > p{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 17px;
+}
+
+.window__container__buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.window__container__buttons > button:first-child{
+    margin-left: 30px;
+}
+.window__container__buttons > button:last-child{
+    margin-right: 30px;
+}
+
+@media screen and (max-width:1150px) {
+    .conta__infomacoes{
+        margin-left: 10px;
+    }
+  .informacoes__container__inputs{
+      gap: 25px;
+    }
+    
+    .botoes__botaoDeletar, .botoes__botaoSalvar{
+        margin-left: 28px;
+    }
+}
+@media screen and (max-width:1050px) {
+    .container__conta{
+        height: max-content;
+        margin: 20px;   
+    }
+    .informacoes__container__inputs{
+        width: 100%;
+        flex-direction: column;
+    }
+    .informacoes__container__botoes {
+        width: 100%;
+        justify-content: center;
+    }
+}
+@media screen and (max-width:690px) {
+    .container__conta{
+        width: 100%;
+    }
+    .conta__nomeAdmin{
+        flex-direction: column;
+        margin-left: 0px;
+    }
+    .inputs__header input {
+        width: 215px;
+        height: 25px;
+    }
+    .informacoes__container__botoes{
+        margin-top: 20px;
+    }    
+    .inputs__header{
+        align-items: center;
+    }
+    .botoes__botaoDeletar{
+        margin-left: 0px;
+    }
+    .botoes__botaoSalvar{
+        margin-right: 0px;
+    }
+    .popup__window{
+        width: 60%;
+    }
+    .title__text{
+        margin: 0px;
+    }
+    .window__container__textContent > p{
+        font-size: 14px;
+    }
+}

@@ -6,7 +6,7 @@ import React, { PureComponent } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import data from './dataReport';
 
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZWUyNjRiMjc0NjQ2OTdhOTRhODkzNSIsImVtYWlsIjoiZ2loNDUwMEBnbWFpbC5jb20iLCJpYXQiOjE3MTcyNjIyMjQsImV4cCI6MTcxNzM0ODYyNH0.fbo7T1e6E2A3dK-qjqVZ7jFA493b70YsWmEP4eryCwI";
+const token = window.localStorage.getItem('qJwt')
 
 const Relatorio = () => {
     const [qtdUsuarios, setQtdUsuarios] = useState(0);

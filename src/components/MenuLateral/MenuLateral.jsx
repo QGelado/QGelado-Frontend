@@ -42,17 +42,17 @@ const MenuLateral = ({ selecao, adminName }) => {
             },
           }}
         >
-          <MenuItem component={<Link to="/" />} active={selecao == "relatorio" ? true : false} icon={<FaChartBar />}>Relatório</MenuItem>
+          <MenuItem component={<Link to="/relatorio" />} active={selecao == "relatorio" ? true : false} icon={<FaChartBar />}>Relatório</MenuItem>
           <SubMenu label="Cadastrar produto" icon={<FaProductHunt />}  >
             <MenuItem component={<Link to="/cadastro-produto?type=sorvete-padrao" />} active={selecao == "sorvete-padrao" ? true : false} icon={<FaIceCream />}>Sorvete padrão</MenuItem>
             <MenuItem component={<Link to="/cadastro-produto?type=recipiente" />} active={selecao == "recipiente" ? true : false} icon={<TbCone2 />}>Recipiente</MenuItem>
             <MenuItem component={<Link to="/cadastro-produto?type=acompanhamento" />} active={selecao == "acompanhamento" ? true : false} icon={<GiChocolateBar />}>Acompanhamento</MenuItem>
             <MenuItem component={<Link to="/cadastro-produto?type=sabor-sorvete" />} active={selecao == "sabor-sorvete" ? true : false}  icon={<GiStrawberry />}>Sabor sorvete</MenuItem>
           </SubMenu>
-          <MenuItem component={<Link to="/" />} active={selecao == "pedidos" ? true : false}  icon={<MdOutlineStickyNote2 />}>Pedidos</MenuItem>
-          <MenuItem component={<Link to="/" />} active={selecao == "estoque" ? true : false}  icon={<GoArchive  />}>Estoque</MenuItem>
-          <MenuItem component={<Link to="/" />} active={selecao == "conta" ? true : false} icon={<MdOutlineAccountBox />}>Conta</MenuItem>
-          <MenuItem component={<Link to="/" />} active={selecao == "sair" ? true : false} icon={<MdLogout />}>Sair</MenuItem>
+          <MenuItem component={<Link to="/pedidos" />} active={selecao == "pedidos" ? true : false}  icon={<MdOutlineStickyNote2 />}>Pedidos</MenuItem>
+          <MenuItem component={<Link to="/estoque" />} active={selecao == "estoque" ? true : false}  icon={<GoArchive  />}>Estoque</MenuItem>
+          <MenuItem component={<Link to="/conta" />} active={selecao == "conta" ? true : false} icon={<MdOutlineAccountBox />}>Conta</MenuItem>
+          <MenuItem component={<Link to="/login" />} active={selecao == "sair" ? true : false} icon={<MdLogout />}>Sair</MenuItem>
         </Menu>
       </Sidebar >
     </div>

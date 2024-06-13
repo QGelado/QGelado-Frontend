@@ -9,7 +9,6 @@ const Cadastro = () => {
   const navigate = useNavigate();
 
   const handleChange = (event) => {
-    console.log(event.target.value)
     setUser({ ...user, [event.target.name]: event.target.value });
   };
 
@@ -52,7 +51,7 @@ const Cadastro = () => {
                   </div>
   
                   <div className='informacoes__cadastroiner__botoes'>
-                      <h3>Já tem uma cadastro?<RouterLink to="/"> Login</RouterLink></h3>
+                      <h3>Já tem uma cadastro?<RouterLink to="/login"> Login</RouterLink></h3>
                   </div>
               </div>
           </section>

@@ -13,7 +13,8 @@ import {
 import { darken, lighten, useTheme } from '@mui/material';
 import Axios from 'axios';
 
-const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTY2NDg5NDksImV4cCI6MTcxNjczNTM0OX0.zSIgA4WtNDwsk3nhtQjpIseucPoFmeAXTf0K9lTGLRY";
+const TOKEN = window.localStorage.getItem('qJwt')
+
 
 const Estoque = () => {
   const [data, setData] = useState([]);

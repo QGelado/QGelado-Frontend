@@ -11,7 +11,7 @@ import CheckIcon from '@mui/icons-material/Check';
 import { darken, lighten, useTheme } from '@mui/material';
 import Axios from 'axios';
 
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZWUyNjRiMjc0NjQ2OTdhOTRhODkzNSIsImVtYWlsIjoiZ2loNDUwMEBnbWFpbC5jb20iLCJpYXQiOjE3MTcyNjIyMjQsImV4cCI6MTcxNzM0ODYyNH0.fbo7T1e6E2A3dK-qjqVZ7jFA493b70YsWmEP4eryCwI";
+const token = window.localStorage.getItem('qJwt')
 
 const Pedidos = () => {
     const [popupConfirmar, setPopupConfirmar] = useState(false);

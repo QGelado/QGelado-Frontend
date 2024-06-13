@@ -6,8 +6,8 @@ import Axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTY1NDgwMDMsImV4cCI6MTcxNjYzNDQwM30.jzsib5OjsQeAsAdr_91MWlKrnEGU_t_KbNSEMb9fTBo";
-const id = "66509150014aa10fb3990d5a";
+const token = window.localStorage.getItem('qJwt')
+const id = window.localStorage.getItem('idUser')
 
 function PopupActions({ title, textContent, redButtonText, greenButtonText, visibility, state, functionError, errorStatus, setErrorStatus, updateFunction }) {
     if (errorStatus == 'hide') {
