@@ -167,16 +167,17 @@
 .ball_app{
     background: linear-gradient(122deg, #C3EFFF 0%, #FF90C8 100%);
     border-radius: 50%;
-    width: 35rem;
-    height: 35rem;
+    width: 30rem;
+    height: 30rem;
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    margin-top: 4rem;
 }
 
 .cell_app{
     margin-top: -4rem;
-    height: 35rem;
+    height: 30rem;
     rotate: -10deg;
 }
 
@@ -186,6 +187,7 @@
     align-items: center;
     text-align: center;
     flex-direction: column;
+    width: 35vw;
 }
 
 .title_app{
@@ -196,7 +198,6 @@
     font-family: var(--titan-one);
     text-align: center;
     margin: 0rem;
-    width: 70%;
 }
 
 .text_app{

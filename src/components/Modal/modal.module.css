@@ -1,0 +1,40 @@
+.container{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000041;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+}
+.popup{
+    width: 40%;
+    height: max-content;
+    padding: 20px;
+    background-color: var(--pink-1);
+    border-radius: 20px;
+    border: 3px solid var(--pink-2);
+    animation: showModal cubic-bezier(0.65, 0, 0.09, 0.96) 1.5s;
+}
+.message{
+    font-family: var(--poppins);
+    font-weight: bold;
+    color: var(--brown);
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+@keyframes showModal{
+    0% {
+        transform: scale(0);
+    }
+    80%{
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}   
