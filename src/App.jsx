@@ -17,12 +17,9 @@ function App() {
         <Route exact path="/cadastrar" element={<Cadastro/>}/>
         <Route exact path="/home" element={<Home/>}/>
         <Route path="/conta" element={<Conta/>}/>
-<<<<<<< HEAD
         <Route path="/estoque" element={<Estoque/>}/>
         <Route path="/relatorio" element={<Relatorio/>}/>
-=======
         <Route path="/perfil" element={<Perfil/>} />
->>>>>>> feature/login
       </Routes>
     </BrowserRouter>
   )

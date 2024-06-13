@@ -1,3 +1,306 @@
 .title{
-    font-size: 50px;
+    font-size: 5rem;
+    background: -webkit-linear-gradient(#FF90C8, #FFC2E1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: var(--titan-one);
+    text-align: center;
+    margin: 1rem;
+    padding: 5px;
+}
+.main{
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+}
+.section_title{
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.arrow_down{
+    clip-path: circle();
+    padding: .5rem;
+    background: linear-gradient(122deg, #C3EFFF 0%, #197CFF 100%);
+    cursor: pointer;
+    transition: 1s all;
+    z-index: 0;
+}
+.arrow_down:hover{
+    transition: 1s all;
+    background: linear-gradient(122deg, #197CFF 0%, #C3EFFF 100%);
+    opacity: .5;
+}
+.btnMonteSorvete{
+    background-color: #FF90C8;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    box-shadow: 4px 4px 6px #FFC2E1 inset;
+    color: #fff;
+    font-family: var(--titan-one);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.select_sorvete{
+    background: linear-gradient(122deg, #E5F8FF 0%, #C3EFFF 100%);
+    border-radius: 3rem;
+    padding: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.img_sorvete_selected{
+    height: 40vh;
+    width: 250px;
+    object-fit: contain;
+}
+
+.imgs_sorvetes_selects_main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.imgs_sorvetes_selects{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sorvete_select{
+    height: 3rem;
+    width: 3rem;
+    padding: 1rem;
+    object-fit: contain;
+    background-color: var(--pink-1);
+    border: 4px solid var(--pink-1);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.sorvete_selected{
+    height: 3rem;
+    width: 3rem;
+    padding: 1rem;
+    object-fit: contain;
+    background-color: var(--pink-2);
+    border: 4px solid var(--pink-1);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.view_sorvetes{
+   background-color: var(--blue-1); 
+   flex-direction: column;
+   display: flex;
+   align-items: center;
+   margin-top: -5px;
+}
+.title_view_sorvetes{
+    font-size: 2rem;
+    background: -webkit-linear-gradient(#FF90C8, #FFC2E1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: var(--titan-one);
+    text-align: center;
+    margin: 1rem;
+}
+.btns_filter{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.btn_filter{
+    background-color: var(--pink-3);
+    color: #fff;
+    font-family: var(--poppins);
+    padding: .5rem 1rem;
+    border-radius:20px;
+    border: none;
+    cursor: pointer;
+}
+.btn_filter_selected{
+    background-color: var(--pink-2);
+    color: #fff;
+    font-family: var(--poppins);
+    padding: .5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+.box_sorvetes{
+    margin: 2rem 15rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.text_more{
+    font-family: var(--titan-one);
+    color: var(--blue-3);
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+.section_app{
+    margin: 5rem 0rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ball_app{
+    background: linear-gradient(122deg, #C3EFFF 0%, #FF90C8 100%);
+    border-radius: 50%;
+    width: 35rem;
+    height: 35rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.cell_app{
+    margin-top: -4rem;
+    height: 35rem;
+    rotate: -10deg;
+}
+
+.download_app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.title_app{
+    font-size: 5rem;
+    background: -webkit-linear-gradient(25deg, #197CFF, #C3EFFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: var(--titan-one);
+    text-align: center;
+    margin: 0rem;
+    width: 70%;
+}
+
+.text_app{
+    color: var(--brown);
+    font-family: var(--poppins);
+}
+
+.qrcode_app{
+    width: 15rem;
+}
+
+.contato{
+    background-color: #FFC2E1; 
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: -5px;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+.contato_logo{
+    width: 10rem;
+}
+
+.contato_links{
+    display: flex;
+    flex-direction: column;
+}
+
+.contato_links > a{
+    font-family: var(--poppins);
+    color: white;
+}
+
+.contato_icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contato_icon{
+    background-color: var(--pink-2);
+    color: #FFC2E1;
+    padding: .8rem;
+    border-radius: 100%;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s all;
+}
+
+.contato_icon:hover{
+    filter: brightness(1.1);
+}
+.footer{
+    padding: .5rem;
+    background-color: var(--pink-2);
+    font-family: var(--poppins);
+    color: white;
+    text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+    .ball_app{
+        width: 15rem;
+        height: 15rem;
+    }
+    .cell_app{
+        height: 14rem;
+        margin-top: -1rem;
+    }
+    .title_app{
+        width: auto;
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .title_app, .title{
+        font-size: 3rem;
+    }
+    .imgs_sorvetes_selects{
+        display: none;
+    }
+    .select_sorvete{
+        width: 90vw;
+        align-items: center;
+        justify-content: center;
+    }
+    .img_sorvete_selected{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .contato_links{
+        text-align: center;
+    }
+    .contato_icons{
+        margin-bottom: 1rem;
+    }
 }
