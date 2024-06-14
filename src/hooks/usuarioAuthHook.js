@@ -4,7 +4,7 @@ async function deletarUsuario(
   id,
 ) {
   try {
-    const response = await privateApi.delete(`/usuario/${id}`);
+    const response = await privateApi.delete(`/admin/${id}`);
 
     return response.data;
   } catch (error) {
@@ -24,7 +24,7 @@ async function atualizarUsuario(
   user,
 ) {
   try {
-    const response = await privateApi.put(`/usuario/${id}`, user);
+    const response = await privateApi.put(`/admin/${id}`, user);
 
     return response.data;
   } catch (error) {

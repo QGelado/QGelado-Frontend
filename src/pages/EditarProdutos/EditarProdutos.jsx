@@ -13,7 +13,7 @@ const EditarProdutos = () => {
     const searchParams = new URLSearchParams(useLocation().search)
     const type = searchParams.get('type')
     const id = searchParams.get('id')
-    const token = window.localStorage.getItem('token')
+    const token = window.localStorage.getItem('qJwt')
     const [fields] = useState(
         type === 'sabor-sorvete' ? ['imagem', 'nome', 'sabor', 'quantidade', 'preco']
         : type === 'recipiente' || type === 'acompanhamento' ? ['imagem', 'nome', 'tipo', 'quantidade', 'preco']

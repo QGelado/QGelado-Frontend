@@ -7,8 +7,6 @@ import { login } from '../../hooks/usuarioHook';
 
 import './style.css';
 
-
-
 const Login = () => {
     const [user, setUser] = React.useState();
 
@@ -21,13 +19,13 @@ const Login = () => {
     const handleSubmit = async () => {
 
         const userLogin = await getState(setUser);
-        const userResponse = await login(userLogin.email, userLogin.email);
+        const userResponse = await login(userLogin.email, userLogin.senha);
         
         if (userResponse) {
-            const userId = userResponse.usuarioExiste[0]._id;
+            const userId = userResponse.temAdmin[0]._id;
             setUserId(userId);
             setToken(userResponse.token);
-            navigate('/perfil');
+            navigate('/conta');
         }
     };
     return (

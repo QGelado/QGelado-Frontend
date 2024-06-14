@@ -12,12 +12,16 @@ import {
 } from '@mui/icons-material';
 import { darken, lighten, useTheme } from '@mui/material';
 import Axios from 'axios';
+import { useNavigate, Link as RouterLink } from 'react-router-dom';
+import Modal from '../../components/Modal/Modal';
 
 const TOKEN = window.localStorage.getItem('qJwt')
 
 
 const Estoque = () => {
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
+  const [modal, setModal] = useState(null)
 
   function retornaSorvetesPadroes() {
     Axios.get(`http://localhost:3000/sorvete-padrao`)
@@ -67,6 +71,81 @@ const Estoque = () => {
       })
   }
 
+  function deletaProduto(type, id) {
+
+    if (type == "acompanhamento") {
+      Axios.delete(`http://localhost:3000/acompanhamento/${id}`, {
+        headers: {
+          Authorization: `Bearer ${TOKEN}`,
+        }
+      })
+        .then((response) => {
+          console.log(response.data)
+          retornaAcompanhamento();
+          setModal(<Modal message="Produto deletado" />)
+          setTimeout(() => {
+            setModal(null)
+          }, 2000)
+        })
+        .catch((error) => {
+          console.log("Error:\n" + error)
+        })
+    } else if (type == "sabor-sorvete") {
+      Axios.delete(`http://localhost:3000/sabor-sorvete/${id}`, {
+        headers: {
+          Authorization: `Bearer ${TOKEN}`,
+        }
+      })
+        .then((response) => {
+          console.log(response.data)
+          retornaSaborSorvete();
+          setModal(<Modal message="Produto deletado" />)
+          setTimeout(() => {
+            setModal(null)
+          }, 2000)
+        })
+        .catch((error) => {
+          console.log("Error:\n" + error)
+        })
+    } else if (type == "sorvete-padrao") {
+      Axios.delete(`http://localhost:3000/sorvete-padrao/${id}`, {
+        headers: {
+          Authorization: `Bearer ${TOKEN}`,
+        }
+      })
+        .then((response) => {
+          console.log(response.data)
+          retornaSorvetesPadroes();
+          setModal(<Modal message="Produto deletado" />)
+          setTimeout(() => {
+            setModal(null)
+          }, 2000)
+        })
+        .catch((error) => {
+          console.log("Error:\n" + error)
+        })
+    } else if (type == "recipiente") {
+      Axios.delete(`http://localhost:3000/recipiente/${id}`, {
+        headers: {
+          Authorization: `Bearer ${TOKEN}`,
+        }
+      })
+        .then((response) => {
+          console.log(response.data)
+          retornaRecepiente();
+          setModal(<Modal message="Produto deletado" />)
+          setTimeout(() => {
+            setModal(null)
+          }, 2000)
+        })
+        .catch((error) => {
+          console.log("Error:\n" + error)
+        })
+    }
+  }
+
+
+
   useEffect(() => {
     retornaSaborSorvete()
     retornaAcompanhamento()
@@ -97,7 +176,7 @@ const Estoque = () => {
         accessorKey: 'nome',
         header: 'Nome do produto',
         size: 150,
-      },  
+      },
       {
         accessorKey: 'tipoProduto',
         header: 'Tipo',
@@ -139,10 +218,10 @@ const Estoque = () => {
     enableRowActions: true,
     renderRowActions: ({ row }) => (
       <Box sx={{ display: 'flex', flexWrap: 'nowrap' }}>
-        <IconButton onClick={() => console.info(row)}>
+        <IconButton onClick={() => { navigate(`/editar-produto?type=${row.original.tipoProduto}&id=${row.original._id}`) }}>
           <EditIcon />
         </IconButton>
-        <IconButton onClick={() => console.info(row)}>
+        <IconButton onClick={() => { deletaProduto(row.original.tipoProduto, row.original._id) }}>
           <DeleteIcon />
         </IconButton>
       </Box>
@@ -182,19 +261,20 @@ const Estoque = () => {
   });
 
   return data.length > 0 ? (
-      <main className='pedidos__main'>
-        <MenuLateral selecao="estoque" adminName="Wilson Vendramel" />
-        <section className="container__table">
-          <div className='table__title'>
-            <p>Estoque</p>
-          </div>
-          <div className='table__data'>
-            <MaterialReactTable table={table} />
-          </div>
-        </section>
-      </main>
-    ) : null
-  
+    <main className='pedidos__main'>
+      {modal}
+      <MenuLateral selecao="estoque" adminName="Wilson Vendramel" />
+      <section className="container__table">
+        <div className='table__title'>
+          <p>Estoque</p>
+        </div>
+        <div className='table__data'>
+          <MaterialReactTable table={table} />
+        </div>
+      </section>
+    </main>
+  ) : null
+
 }
 
 export default Estoque;

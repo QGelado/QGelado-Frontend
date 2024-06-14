@@ -5,7 +5,7 @@ async function login(
   senha,
 )  {
   try {
-    const response = await publicApi.post('/usuario/login', { email, senha });
+    const response = await publicApi.post('/admin/login', { email, senha });
 
     return response.data;
   } catch (error) {
@@ -18,7 +18,7 @@ async function cadastrarUsuario(
   user,
 ) {
   try {
-    const response = await publicApi.post('/usuario', user);
+    const response = await publicApi.post('/admin', user);
     console.log(response)
     return response.data;
   } catch (error) {

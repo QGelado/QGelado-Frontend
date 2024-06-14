@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 
 import  { cadastrarUsuario } from '../../hooks/usuarioHook';
+import { setToken, setUserId } from '../../config/auth';
 import './style.css';
 
 const Cadastro = () => {
@@ -14,8 +15,11 @@ const Cadastro = () => {
 
   const handleSubmit = async () => {
     if (user) {
-        await cadastrarUsuario(user);
-        navigate('/perfil');
+        const userResponse = await cadastrarUsuario(user);
+        console.log(userResponse.data._id)
+        setUserId(userResponse.data._id);
+        setToken(userResponse.token);
+        navigate('/conta');
     }
   }
 

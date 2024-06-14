@@ -11,7 +11,7 @@ import Modal from '../../components/Modal/Modal';
 const CadastroProdutos = () => {
     const searchParams = new URLSearchParams(useLocation().search)
     const type = searchParams.get('type')
-    const token = window.localStorage.getItem('token')
+    const token = window.localStorage.getItem('qJwt')
     const objFields = {
         'sabor-sorvete':['nome', 'sabor', 'quantidade', 'preco', 'file'],
         'recipiente': ['nome', 'tipo', 'quantidade', 'preco', 'file'],

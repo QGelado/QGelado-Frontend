@@ -75,7 +75,7 @@ const Conta = () => {
     const [senha, setSenha] = useState("");
     const [senhaConfirmar, setConfirmaSenha] = useState("");
     const navigate = useNavigate()
-    
+
     function deleteAdmin() {
         Axios.delete(`http://localhost:3000/admin/${id}`, {
             headers: {
@@ -85,7 +85,7 @@ const Conta = () => {
             .then((response) => {
                 setErrorMessage("showSucesso");
                 setVisibilityDeletar(e => !e)
-                navigate('/');
+                navigate('/login');
                 return "Sucesso na requisicao"
             })
             .catch((error) => {
@@ -145,6 +145,23 @@ const Conta = () => {
         updateAdmin(obj)
     }
 
+    useEffect(() => {
+        Axios.get(`http://localhost:3000/admin/${id}`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            }
+        })
+            .then((response) => {
+                const dadosUser = response.data;
+                setNome(dadosUser.nome)
+                setEmail(dadosUser.email)
+
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }, [])
+
     return (
         <main className='conta__main'>
             <MenuLateral selecao="conta" adminName="Wilson Vendramel" />
@@ -155,7 +172,7 @@ const Conta = () => {
                 <div className='conta__nomeAdmin'>
                     <img src="../../public/imgs/Conta/admin_photo.svg" alt="Foto perfil admin" />
 
-                    <p>Wilson Vendramel</p>
+                    <p>{nome}</p>
                 </div>
 
                 <div className='conta__infomacoes'>
