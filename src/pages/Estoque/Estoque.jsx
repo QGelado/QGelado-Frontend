@@ -26,9 +26,14 @@ const Estoque = () => {
   function retornaSorvetesPadroes() {
     Axios.get(`http://localhost:3000/sorvete-padrao`)
       .then((response) => {
-        let obj = response.data[0];
-        obj['tipoProduto'] = "sorvete-padrao"
-        setData(e => [...e, obj]);
+        let objs = response.data;
+        objs = objs.map((ob) => {
+          return {
+            ...ob,
+            tipoProduto: "sorvete-padrao"
+          }
+        })
+        setData(e => [...e, ...objs]);
       })
       .catch((error) => {
         console.log("Error:\n" + error)
@@ -38,9 +43,14 @@ const Estoque = () => {
   function retornaAcompanhamento() {
     Axios.get(`http://localhost:3000/acompanhamento`)
       .then((response) => {
-        let obj = response.data[0];
-        obj['tipoProduto'] = "acompanhamento"
-        setData(e => [...e, obj]);
+        let objs = response.data;
+        objs = objs.map((ob) => {
+          return {
+            ...ob,
+            tipoProduto: "acompanhamento"
+          }
+        })
+        setData(e => [...e, ...objs]);
       })
       .catch((error) => {
         console.log("Error:\n" + error)
@@ -50,9 +60,14 @@ const Estoque = () => {
   function retornaSaborSorvete() {
     Axios.get(`http://localhost:3000/sabor-sorvete`)
       .then((response) => {
-        let obj = response.data[0];
-        obj['tipoProduto'] = "sabor-sorvete"
-        setData(e => [...e, obj]);
+        let objs = response.data;
+        objs = objs.map((ob) => {
+          return {
+            ...ob,
+            tipoProduto: "sabor-sorvete"
+          }
+        })
+        setData(e => [...e, ...objs]);
       })
       .catch((error) => {
         console.log("Error:\n" + error)
@@ -62,9 +77,14 @@ const Estoque = () => {
   function retornaRecepiente() {
     Axios.get(`http://localhost:3000/recipiente`)
       .then((response) => {
-        let obj = response.data[0];
-        obj['tipoProduto'] = "recipiente"
-        setData(e => [...e, obj]);
+        let objs = response.data;
+        objs = objs.map((ob) => {
+          return {
+            ...ob,
+            tipoProduto: "recipiente"
+          }
+        })
+        setData(e => [...e, ...objs]);
       })
       .catch((error) => {
         console.log("Error:\n" + error)

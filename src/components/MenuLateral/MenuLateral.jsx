@@ -10,6 +10,7 @@ import { GiChocolateBar, GiStrawberry } from "react-icons/gi";
 import { IoIosArrowForward } from "react-icons/io";
 import { GoArchive } from "react-icons/go";
 import Axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 const token = window.localStorage.getItem('qJwt')
 const id = window.localStorage.getItem('idUser')
@@ -18,22 +19,34 @@ const id = window.localStorage.getItem('idUser')
 const MenuLateral = ({ selecao, adminName }) => {
   const [collapsed, setCollapsed] = useState(false);
   const [nome, setNomeUser] = useState("");
+  const navigate = useNavigate()
 
   useEffect(() => {
-    Axios.get(`http://localhost:3000/admin/${id}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
+    setTimeout(() => {
+      if(token && id){
+        Axios.get(`http://localhost:3000/admin/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          }
+        })
+          .then((response) => {
+            const dadosUser = response.data;
+            setNomeUser(dadosUser.nome)
+    
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      }else{
+        navigate('/login')
       }
-    })
-      .then((response) => {
-        const dadosUser = response.data;
-        setNomeUser(dadosUser.nome)
-
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+    }, 1000)
   }, [])
+
+  const logout = (e) => {
+    window.localStorage.removeItem('qJwt')
+    window.localStorage.removeItem('idUser')
+  }
 
   return (
     <div className='menulateral__container'>
@@ -74,7 +87,7 @@ const MenuLateral = ({ selecao, adminName }) => {
           <MenuItem component={<Link to="/pedidos" />} active={selecao == "pedidos" ? true : false} icon={<MdOutlineStickyNote2 />}>Pedidos</MenuItem>
           <MenuItem component={<Link to="/estoque" />} active={selecao == "estoque" ? true : false} icon={<GoArchive />}>Estoque</MenuItem>
           <MenuItem component={<Link to="/conta" />} active={selecao == "conta" ? true : false} icon={<MdOutlineAccountBox />}>Conta</MenuItem>
-          <MenuItem component={<Link to="/login" />} active={selecao == "sair" ? true : false} icon={<MdLogout />}>Sair</MenuItem>
+          <MenuItem onClick={logout} component={<Link to="/login" />} active={selecao == "sair" ? true : false} icon={<MdLogout />}>Sair</MenuItem>
         </Menu>
       </Sidebar >
     </div>
