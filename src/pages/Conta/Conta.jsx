@@ -17,7 +17,7 @@ function PopupActions({ title, textContent, redButtonText, greenButtonText, visi
                 <div className='popup__window'>
                     <div className='window__container__title'>
                         <h2 className='title__text'>{title}</h2>
-                        <img src="../../public/imgs/Conta/close_popup.svg" alt="Ícone de fechar janela" className='title__icon' onClick={() => { state(e => !e); setErrorStatus('hide') }} />
+                        <img src="./imgs/Conta/close_popup.svg" alt="Ícone de fechar janela" className='title__icon' onClick={() => { state(e => !e); setErrorStatus('hide') }} />
                     </div>
                     <div className='window__container__textContent'>
                         <p>{textContent}</p>
@@ -35,7 +35,7 @@ function PopupActions({ title, textContent, redButtonText, greenButtonText, visi
                 <div className='popup__window'>
                     <div className='window__container__title'>
                         <h2 className='title__text'>{title}</h2>
-                        <img src="../../public/imgs/Conta/close_popup.svg" alt="Ícone de fechar janela" className='title__icon' onClick={() => { state(e => !e); setErrorStatus('hide') }} />
+                        <img src="./imgs/Conta/close_popup.svg" alt="Ícone de fechar janela" className='title__icon' onClick={() => { state(e => !e); setErrorStatus('hide') }} />
                     </div>
                     <div className='window__container__textContent'>
                         <p>Dados atualizados com sucesso!</p>
@@ -52,7 +52,7 @@ function PopupActions({ title, textContent, redButtonText, greenButtonText, visi
                 <div className='popup__window'>
                     <div className='window__container__title'>
                         <h2 className='title__text'>{title}</h2>
-                        <img src="../../public/imgs/Conta/close_popup.svg" alt="Ícone de fechar janela" className='title__icon' onClick={() => { state(e => !e); setErrorStatus('hide') }} />
+                        <img src="./imgs/Conta/close_popup.svg" alt="Ícone de fechar janela" className='title__icon' onClick={() => { state(e => !e); setErrorStatus('hide') }} />
                     </div>
                     <div className='window__container__textContent'>
                         <p>Erro na requisição! Verifique os dados! </p>
@@ -171,7 +171,7 @@ const Conta = () => {
                     <h1>Conta</h1>
                 </div>
                 <div className='conta__nomeAdmin'>
-                    <img src="../../public/imgs/Conta/admin_photo.svg" alt="Foto perfil admin" />
+                    <img src="./imgs/Conta/admin_photo.svg" alt="Foto perfil admin" />
 
                     <p>{nome}</p>
                 </div>

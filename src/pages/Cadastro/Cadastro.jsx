@@ -25,7 +25,7 @@ const Cadastro = () => {
 
   return (
       <main className='cadastro__main'>
-          <img src="../../public/imgs/logo_qgelado.svg" alt="Logo QGelado" className='logo__topo' />
+          <img src="./imgs/logo_qgelado.svg" alt="Logo QGelado" className='logo__topo' />
           <section className="cadastroiner__cadastro">
               <div className='cadastro__titulo'>
                   <h1>Cadastre-se</h1>

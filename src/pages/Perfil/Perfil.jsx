@@ -15,7 +15,7 @@ function PopupActions({title, textContent, redButtonText, greenButtonText, visib
             <div className='popup__window'> 
                 <div className='window__container__title'>
                     <h2 className='title__text'>{title}</h2>
-                    <img src="../../public/imgs/Conta/close_popup.svg" alt="Ícone de fechar janela" className='title__icon' onClick={() => state(e => !e)}/>
+                    <img src="./imgs/Conta/close_popup.svg" alt="Ícone de fechar janela" className='title__icon' onClick={() => state(e => !e)}/>
                 </div>
                 <div className='window__container__textContent'>
                     <p>{textContent}</p>
@@ -78,7 +78,7 @@ const Perfil = () => {
                 <h1>Perfil</h1>
             </div>
             <div className='conta__nomeAdmin'>
-                <img src="../../public/imgs/Conta/admin_photo.svg" alt="Foto perfil admin" />
+                <img src="./imgs/Conta/admin_photo.svg" alt="Foto perfil admin" />
 
                 <p>{user.nome}</p>
             </div>

@@ -30,7 +30,7 @@ const Login = () => {
     };
     return (
         <main className='login__main'>
-            <img src="../../public/imgs/logo_qgelado.svg" alt="Logo QGelado" className='logo__topo' />
+            <img src="./imgs/logo_qgelado.svg" alt="Logo QGelado" className='logo__topo' />
             <section className="logininer__login">
                 <div className='login__titulo'>
                     <h1>Login</h1>

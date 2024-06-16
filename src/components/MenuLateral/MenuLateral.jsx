@@ -60,10 +60,10 @@ const MenuLateral = ({ selecao, adminName }) => {
         height: "100%",
         minHeight: '100vh'
       }} collapsed={collapsed}>
-        <img src="../../public/imgs/logo_qgelado.svg" alt="Logo QGelado" className='logo__menulateral imagens-centralizadas' />
+        <img src="./imgs/logo_qgelado.svg" alt="Logo QGelado" className='logo__menulateral imagens-centralizadas' />
 
         <section className='adminName__container'>
-          <img src="../../public/imgs/Conta/admin_photo.svg" alt="Foto perfil admin" className='photo_perfil imagens-centralizadas' />
+          <img src="./imgs/Conta/admin_photo.svg" alt="Foto perfil admin" className='photo_perfil imagens-centralizadas' />
           <p style={{ fontSize: 20, fontWeight: "bold", textAlign: "center", display: !collapsed ? "block" : "none" }}>{nome}</p>
         </section>
 
