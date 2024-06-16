@@ -1,0 +1,89 @@
+.relatorio__main {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    background-color: #FDFDFD;
+    display: flex;
+}
+
+.container__relatorio {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 20px;
+}
+
+.relatorio__title__section {
+    font-family: "Titan One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 26px;
+    color: #197CFF;
+}
+
+
+.relatorio__backgroundData {
+    width: 600px;
+    border: 1px solid #197CFF;
+    border-radius: 10px;
+    background-color: #C3EFFF;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.relatorio__backgroundData--block {
+ display: block;
+}
+
+.relatorio__backgroundData--big {
+    height: 200px;
+}
+
+.relatorio__backgroundData--medium {
+    height: 100px;
+}
+
+.relatorio__backgroundData__text--bold{
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.relatorio__backgroundData__text--medium{
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+@media screen and (max-width:1500px) {
+    .relatorio__backgroundData {
+        width: 450px;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .relatorio__backgroundData {
+        width: 600px;
+    }
+
+    .container__relatorio {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width:920px) {
+    .relatorio__backgroundData {
+        width: 400px;
+    }
+}

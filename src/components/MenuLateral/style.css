@@ -1,0 +1,40 @@
+.logo__menulateral {
+  width: 100%;
+  height: 140px;
+}
+
+.photo_perfil{
+  width: 80%;
+  height: 90px;
+}
+
+.imagens-centralizadas {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Mudar o hover dos elementos do Menu Lateral */
+.menulateral__container a:hover,
+.fpTHfu {
+  background-color: #87DFFF !important;
+}
+
+.adminName__container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.collapse__container{
+  width: 20px;
+  height: 20px;
+  background-color: #197CFF;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  z-index: 1000;
+}

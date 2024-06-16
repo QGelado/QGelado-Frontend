@@ -1,0 +1,101 @@
+.main{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    background-color: #FDFDFD;
+    display: flex;
+    position: relative;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: var(--poppins);
+    box-shadow: 0px 5px 10px #00000015;
+    background-color: var(--blue-1);
+    border-radius: 5px;
+    padding: 2rem 1rem;
+    width: fit-content;
+    height: fit-content;
+    margin: 2rem auto;
+}
+.label{
+    text-transform: capitalize;
+    font-size: 0.9rem;
+}
+.boxInput{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.boxInputs{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+}
+.input{
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: auto;
+    font-family: var(--poppins);
+}
+.textarea{
+    resize: none;
+    border: 2px solid #000;
+    border-radius: 5px;
+    height: 100px;
+    padding: 5px 10px;
+    width: auto;
+    font-family: var(--poppins);
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.title{
+    color: var(--blue-3);
+    font-family: var(--titan-one);
+    width: 28rem;
+    text-align: center;
+}
+.btnSalvar{
+    background-color: var(--pink-3);
+    border-radius: 3rem;
+    padding: 1rem 2rem;
+    box-shadow: 4px 4px 6px var(--pink-1) inset;
+    color: #fff;
+    font-family: var(--titan-one);
+    font-size: 1rem;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.imgInputProduct{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 3rem;
+    background-color: var(--blue-2);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2px;
+}
+.imgProduct{
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    overflow-y: auto;
+    cursor: pointer;
+}

@@ -1,0 +1,30 @@
+.pedidos__main {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    background-color: #FDFDFD;
+    display: flex;
+}
+
+.container__table{
+    width: calc(100% - 300px);
+    background-color: #E5F8FF;
+    margin: 20px;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.table__title > p{
+    font-family: "Titan One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 26px;
+    color: #197CFF;
+    margin: 10px;
+    padding: 20px;
+}
