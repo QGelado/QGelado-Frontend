@@ -4,6 +4,7 @@ import './style.css';
 import PropTypes from 'prop-types';
 import Axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { api } from '../../utils/api';
 
 
 const token = window.localStorage.getItem('qJwt')
@@ -77,7 +78,7 @@ const Conta = () => {
     const navigate = useNavigate()
 
     function deleteAdmin() {
-        Axios.delete(`http://localhost:3000/admin/${id}`, {
+        api.delete(`admin/${id}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             }
@@ -97,7 +98,7 @@ const Conta = () => {
     }
 
     function updateAdmin(newData) {
-        Axios.put(`http://localhost:3000/admin/${id}`, newData, {
+        api.put(`admin/${id}`, newData, {
             headers: {
                 Authorization: `Bearer ${token}`,
             }
@@ -146,7 +147,7 @@ const Conta = () => {
     }
 
     useEffect(() => {
-        Axios.get(`http://localhost:3000/admin/${id}`, {
+        api.get(`admin/${id}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             }

@@ -9,7 +9,7 @@ import Card from '../../components/Card/Card';
 import { getImage } from '../../utils/getImage';
 
 const Home = () => {
-  const [slide, setSlide] = useState(["/src/assets/sorvetes.png"]);
+  const [slide, setSlide] = useState(["./imgs/sorvetes.png"]);
   const [sorvetes, setSorvetes] = useState([])
   const [sabores, setSabores] = useState([])
   const [slice, setSlice] = useState(6)
@@ -70,7 +70,7 @@ const Home = () => {
           </div>
         </aside>
       </main>
-      <img src="/src/assets/blue_waves.svg" alt="blue waves" id='produtos'/>
+      <img src="./imgs/blue_waves.svg" alt="blue waves" id='produtos'/>
       <section className={styles.view_sorvetes} >
         <h2 className={styles.title_view_sorvetes}>Nossos produtos</h2>
         <div className={styles.btns_filter}>
@@ -107,18 +107,18 @@ const Home = () => {
       className={styles.section_app} id='aplicativo'>
         <aside>
           <div className={styles.ball_app}>
-            <img src="/src/assets/celular.png" alt="app QGelado" className={styles.cell_app}/>
+            <img src="./imgs/celular.png" alt="app QGelado" className={styles.cell_app}/>
           </div>
         </aside>
         <div className={styles.download_app}>
           <h3 className={styles.title_app}>Baixe o aplicativo</h3>
           <p className={styles.text_app}>Monte seu próprio sorvete e faça seu pedido!</p>
-          <img src="/src/assets/qrcode.png" alt="QR CODE App QGelado" className={styles.qrcode_app}/>
+          <img src="./imgs/qrcode.png" alt="QR CODE App QGelado" className={styles.qrcode_app}/>
         </div>
       </section>
-      <img src="/src/assets/pink_waves.svg" alt="pink waves" />
+      <img src="./imgs/pink_waves.svg" alt="pink waves" />
       <section className={styles.contato} id='contato'>
-        <img src="/src/assets/logo_QGelado.svg" alt="Logo QGelado" className={styles.contato_logo}/>
+        <img src="./imgs/logo_qgelado.svg" alt="Logo QGelado" className={styles.contato_logo}/>
         <div className={styles.contato_links}>
           <a href="#aplicativo">Aplicativo</a>
           <a href="#produtos">Nossos Produtos</a>

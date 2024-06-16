@@ -10,6 +10,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import CheckIcon from '@mui/icons-material/Check';
 import { darken, lighten, useTheme } from '@mui/material';
 import Axios from 'axios';
+import { api } from '../../utils/api';
 
 const token = window.localStorage.getItem('qJwt')
 
@@ -23,7 +24,7 @@ const Pedidos = () => {
     const [preco, setPreco] = useState(0);
 
     function retornaDadosPedidos() {
-        Axios.get(`http://localhost:3000/pedidos/busca?limite=100`, {
+        api.get(`pedidos/busca?limite=100`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             }
@@ -39,7 +40,7 @@ const Pedidos = () => {
     }
 
     function atualizaStatus(id) {
-        Axios.put(`http://localhost:3000/pedidos/${id}`, {
+        api.put(`pedidos/${id}`, {
             "status": "Finalizado"
         },{
             headers: {

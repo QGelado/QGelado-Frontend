@@ -5,6 +5,7 @@ import Axios from 'axios';
 import React, { PureComponent } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import data from './dataReport';
+import { api } from '../../utils/api';
 
 const token = window.localStorage.getItem('qJwt')
 
@@ -17,7 +18,7 @@ const Relatorio = () => {
     const [qtdSorvetesmensais, setQtdSorvetesMensais] = useState([]);
 
     useEffect(() => {
-        Axios.get(`http://localhost:3000/pedidos/valor-por-meses`, {
+        api.get(`pedidos/valor-por-meses`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             }
@@ -43,7 +44,7 @@ const Relatorio = () => {
     }, [])
 
     useEffect(() => {
-        Axios.get(`http://localhost:3000/pedidos/sorvetes`, {
+        api.get(`pedidos/sorvetes`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             }
@@ -59,7 +60,7 @@ const Relatorio = () => {
     }, [])
 
     useEffect(() => {
-        Axios.get(`http://localhost:3000/pedidos/valor-total`, {
+        api.get(`pedidos/valor-total`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             }
@@ -74,7 +75,7 @@ const Relatorio = () => {
     }, [])
 
     useEffect(() => {
-        Axios.get(`http://localhost:3000/pedidos/sorvetes-valor-total`, {
+        api.get(`pedidos/sorvetes-valor-total`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             }
@@ -89,7 +90,7 @@ const Relatorio = () => {
     }, [])
 
     useEffect(() => {
-        Axios.get(`http://localhost:3000/pedidos/usuarios`, {
+        api.get(`pedidos/usuarios`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             }
@@ -105,7 +106,7 @@ const Relatorio = () => {
     }, [])
 
     useEffect(() => {
-        Axios.get(`http://localhost:3000/usuario/quantidadeCadastrados`, {
+        api.get(`usuario/quantidadeCadastrados`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             }

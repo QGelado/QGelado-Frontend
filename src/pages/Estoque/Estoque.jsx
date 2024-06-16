@@ -14,6 +14,7 @@ import { darken, lighten, useTheme } from '@mui/material';
 import Axios from 'axios';
 import { useNavigate, Link as RouterLink } from 'react-router-dom';
 import Modal from '../../components/Modal/Modal';
+import { api } from '../../utils/api';
 
 const TOKEN = window.localStorage.getItem('qJwt')
 
@@ -24,7 +25,7 @@ const Estoque = () => {
   const [modal, setModal] = useState(null)
 
   function retornaSorvetesPadroes() {
-    Axios.get(`http://localhost:3000/sorvete-padrao`)
+    api.get(`sorvete-padrao`)
       .then((response) => {
         let objs = response.data;
         objs = objs.map((ob) => {
@@ -41,7 +42,7 @@ const Estoque = () => {
   }
 
   function retornaAcompanhamento() {
-    Axios.get(`http://localhost:3000/acompanhamento`)
+    api.get(`acompanhamento`)
       .then((response) => {
         let objs = response.data;
         objs = objs.map((ob) => {
@@ -58,7 +59,7 @@ const Estoque = () => {
   }
 
   function retornaSaborSorvete() {
-    Axios.get(`http://localhost:3000/sabor-sorvete`)
+    api.get(`sabor-sorvete`)
       .then((response) => {
         let objs = response.data;
         objs = objs.map((ob) => {
@@ -75,7 +76,7 @@ const Estoque = () => {
   }
 
   function retornaRecepiente() {
-    Axios.get(`http://localhost:3000/recipiente`)
+    api.get(`recipiente`)
       .then((response) => {
         let objs = response.data;
         objs = objs.map((ob) => {
@@ -94,7 +95,7 @@ const Estoque = () => {
   function deletaProduto(type, id) {
 
     if (type == "acompanhamento") {
-      Axios.delete(`http://localhost:3000/acompanhamento/${id}`, {
+      api.delete(`acompanhamento/${id}`, {
         headers: {
           Authorization: `Bearer ${TOKEN}`,
         }
@@ -111,7 +112,7 @@ const Estoque = () => {
           console.log("Error:\n" + error)
         })
     } else if (type == "sabor-sorvete") {
-      Axios.delete(`http://localhost:3000/sabor-sorvete/${id}`, {
+      api.delete(`sabor-sorvete/${id}`, {
         headers: {
           Authorization: `Bearer ${TOKEN}`,
         }
@@ -128,7 +129,7 @@ const Estoque = () => {
           console.log("Error:\n" + error)
         })
     } else if (type == "sorvete-padrao") {
-      Axios.delete(`http://localhost:3000/sorvete-padrao/${id}`, {
+      api.delete(`sorvete-padrao/${id}`, {
         headers: {
           Authorization: `Bearer ${TOKEN}`,
         }
@@ -145,7 +146,7 @@ const Estoque = () => {
           console.log("Error:\n" + error)
         })
     } else if (type == "recipiente") {
-      Axios.delete(`http://localhost:3000/recipiente/${id}`, {
+      api.delete(`recipiente/${id}`, {
         headers: {
           Authorization: `Bearer ${TOKEN}`,
         }

@@ -11,6 +11,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { GoArchive } from "react-icons/go";
 import Axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import { api } from "../../utils/api";
 
 const token = window.localStorage.getItem('qJwt')
 const id = window.localStorage.getItem('idUser')
@@ -24,7 +25,7 @@ const MenuLateral = ({ selecao, adminName }) => {
   useEffect(() => {
     setTimeout(() => {
       if(token && id){
-        Axios.get(`http://localhost:3000/admin/${id}`, {
+        api.get(`admin/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           }
@@ -40,7 +41,7 @@ const MenuLateral = ({ selecao, adminName }) => {
       }else{
         navigate('/login')
       }
-    }, 1000)
+    }, 2000)
   }, [])
 
   const logout = (e) => {
